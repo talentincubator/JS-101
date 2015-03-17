@@ -1,4 +1,6 @@
 # JS-101
+[http://talentincubator.eu/images/courses/jspart1.jpg](js)
+
 Το να είσαι καλός developer δεν σημαίνει μόνο να ξέρεις τα τελευταία frameworks και γλώσσες, αλλά να γράφεις αποτελεσματικό και καλό κώδικα. Γι’αυτό το λόγο ξεκινάμε με ένα καλό overview στα θεμελιώδη της JS (pre-requirements γνώση HTML ή το course HTML101).
 
 ## Learning Points
