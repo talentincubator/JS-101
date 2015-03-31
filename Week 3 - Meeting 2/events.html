@@ -1,0 +1,235 @@
+<!-- Event Listeners   -->
+
+<!--  <p class="para">Click this document to activate the handler.</p>
+<script>
+  var p2 = document.querySelector("p");
+  p2.addEventListener("click", function(event) {
+  	console.log(event);
+    console.log("You clicked!");
+  });
+</script> -->
+
+
+
+<!-- Event Object   -->
+<!-- <button>Click me any way you want</button>
+
+<script>
+  var button = document.querySelector("button");
+  button.addEventListener("mousedown", function(event) {
+    if (event.which == 1) {
+       console.log(event);
+      console.log("Left button");}
+    else if (event.which == 2) {
+    	console.log(event);
+      console.log("Middle button");}
+    else if (event.which == 3)
+      console.log("Right button");
+  });
+</script> -->
+
+
+
+<!-- Target property -  Different events  -->
+<!-- 
+ <button>A</button>
+<button>B</button>
+<button>C</button>
+<script>
+  document.body.addEventListener("click", function(event) {
+    console.log(event);
+    if (event.target.nodeName == "BUTTON")
+
+      console.log("Clicked", event.target.textContent);
+  });
+</script>
+
+
+
+ -->
+<!-- Default properties   before /preventDefault-->
+
+<!-- <a href="https://developer.mozilla.org/">MDN</a>
+<script>
+  var link = document.querySelector("a");
+  link.addEventListener("click", function(event) {
+    
+    event.preventDefault();
+    alert("Nope.");
+  });
+</script> -->
+
+
+
+<!-- Keyboard -->
+
+<!-- <input type="text" name="name" value="">
+<script>
+ var text = document.querySelector("input");
+  text.addEventListener("keydown", function(event) {
+		if(event.which===13 && event.target.value){
+			console.log(event);
+			var name = event.target.value;
+			event.target.value="";
+			alert(name);
+
+		}
+	});
+</script> 
+ -->
+
+
+
+
+
+
+
+<!-- BOX GAME  -->
+
+<style>
+	body {
+		height: 200px;
+		background: beige;
+	}
+	.dot {
+		height: 15px; width: 15px;
+		border-radius: 4px; 
+		background: blue;
+		position: absolute;
+	}
+</style>
+<script>
+var selectedbox = {};
+var nextdot = {};
+var size = 0;
+	addEventListener("mousedown", function(event) {
+		if (event.which == 1) {
+
+			var dot = document.createElement("div");
+			dot.className = "dot";
+			dot.id = 'nextdot';
+			xx = event.pageX - 15;
+			dot.style.left = xx+ "px";
+			nextdot.x = xx;
+			yy = event.pageY - 15;
+			dot.style.top = yy + "px";
+			nextdot.y = yy;
+			document.body.appendChild(dot);
+		}
+	});
+
+		document.oncontextmenu = function (event) {
+				event.preventDefault();
+				// var allnodes = document.querySelectorAll("div");
+				// for (var node in allnodes) {
+				// 	console.log(allnodes[node]);
+				// 	allnodes[node].className = "dot";
+				// }
+				console.log(event);	
+				if (event.target.nodeName === "DIV") { 
+					if (document.getElementById("selected")){document.getElementById("selected").id = "";}
+					box = event.target;
+				}
+				box.id = "selected";
+				x = event.pageX - 15;
+				y = event.pageY - 15;
+				console.log(box);
+			}; 
+
+	addEventListener("keydown", function(event) {
+		var box = document.querySelector("#selected");
+		console.log(event.which);
+		if(event.which===39){
+			x += 10;
+			box.style.left = x+ "px";
+			console.log(box.style.left);
+		}
+		if(event.which===37){
+			x -= 10;
+			box.style.left = x+ "px";
+			console.log(box.style.left);
+		}	
+		if(event.which===38){
+			y -= 10;
+			box.style.top = y+ "px";
+		}
+		if(event.which===40){
+			y += 10;
+			box.style.top = y+ "px";
+			console.log(box.style.left);
+		}		
+		if (Math.abs(y-nextdot.y) < 15 && Math.abs(x-nextdot.x) < 15)  {
+			size = size +1; 
+			console.log(size);
+			box.style.width = 15+size*5+"px";
+			box.style.height = 15+size*5+"px";
+			nextdot = {};
+			elem = document.getElementById('nextdot');
+			elem.parentNode.removeChild(elem);
+
+		}
+		console.log(y,nextdot.y);
+		console.log(x,nextdot.x);			
+			
+	}
+	);
+
+
+</script>
+
+
+
+
+<!-- Scroll event example -->
+
+<style>
+ /* .progress {
+    border: 1px solid blue;
+    width: 100px;
+    position: fixed;
+    top: 10px; right: 10px;
+  }
+  .progress > div {
+    height: 12px;
+    background: blue;
+    width: 0%;
+  }
+  body {
+    height: 2000px;
+  }*/
+</style>
+<!-- <div class="progress"><div></div></div>
+<p>Scroll me...</p> --> 
+<script>
+  // var bar = document.querySelector(".progress div");
+  // addEventListener("scroll", function() {
+  //   var max = document.body.scrollHeight - innerHeight;
+  //   var percent = (pageYOffset / max) * 100;
+  //   bar.style.width = percent + "%";
+  //   if (parseInt(bar.style.width) >= 100) {
+  // 	 alert('The end');
+  //   }
+  // });
+
+
+</script>
+
+
+
+
+
+
+
+<!-- Timeout  example -->
+<!-- <textarea>Type something here...</textarea>
+<script>
+  var textarea = document.querySelector("textarea");
+  var timeout;
+  textarea.addEventListener("keydown", function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      console.log("You stopped typing.");
+    }, 500);
+  });
+</script> -->
+

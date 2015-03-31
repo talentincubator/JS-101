@@ -80,12 +80,15 @@ var projectsAll = [];
 document.getElementById('ProjectButton').onclick  = function() {
 	var project= new Project();
 	project.name = GetData('addProject');
-	project.name ? projectsAll.push(project) : "" ;
+	if (project.name)  {
+		projectsAll.push(project);
+	}
 	ShowAll(projectsAll);
 	GlobalProject = project;
 };
 
-document.getElementById('todoButton').onclick  = function() {
+document.getElementById('todoButton').onclick  = 
+function() {
 	var todo = new ToDo();
 	todo.name = GetData('addTodo');
 	GlobalProject.addTodo(todo.name);
