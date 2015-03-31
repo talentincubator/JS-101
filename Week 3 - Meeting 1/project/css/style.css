@@ -2,6 +2,13 @@
     font-family: header;
     src: url(../fonts/MontereyFLF-Bold.ttf);
 }
+body{
+	background: #3F3F3F;
+	color:#fff;
+	padding:20px;
+	min-height:1000px;
+}
+
 input{
 	color:black;
 }

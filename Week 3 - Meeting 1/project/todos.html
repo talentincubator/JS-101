@@ -4,42 +4,34 @@
 	<meta charset=utf-8>
 	<meta name=description content="">
 	<meta name=viewport content="width=device-width, initial-scale=1">
-	<title>Anguvel Test</title>
+	<title>TODO Project</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">	
 </head>
-<body ng-controller="TodosController">
+<body>
 	<div class="container">
 		<div class="row">
 			<h1 class="text-center">Todo Project</h1>
 			<div class="col-md-6">
-
 				<div class="todolist" >
 					<h1>Projects</h1>
-					
 					<div class="addProject">
 						<input type="text" id="addProject" class="form-control"  name="addProject" placeholder="Add a new project"  />
-						<button class="btn btn-submit" id="ProjectButton">Add Todo</button>
+						<button class="btn btn-submit" id="ProjectButton">Add Project</button>
 					</div>
 				</div>
-				<ul id="listProjects">
-					
-				</ul>
+				<ul id="listProjects"></ul>
 			</div>
 			<div class="col-md-6">
-
 				<div class="todolist" >
 					<h1 id="title">Todos</h1>
-					
 					<div class="addTodo">
 						<input type="text" id="addTodo" class="form-control"  name="addTodo" placeholder="Add a new task"  />
 						<button class="btn btn-submit" id="todoButton">Add Todo</button>
 					</div>
 				</div>
-				<ul id="listTodos">
-					
-				</ul>
+				<ul id="listTodos"></ul>
 			</div>			
 		</div>
 	</div>
