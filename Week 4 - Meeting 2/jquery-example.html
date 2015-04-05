@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>JQuery Cookie Example</title>
+	</head>
+	<body>
+	
+
+		<h1>Count:</h1>
+		<h2 id="count"></h2>
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.cookie.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				var i  = $.cookie('i');
+				if (i === undefined) {i = 0;}
+				$('#count').text(i++);
+				$.cookie('i', i);
+			});
+		</script>
+	</body>
+</html>
